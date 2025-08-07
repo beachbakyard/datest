@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registered Teams - Home Court Series</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <section class="py-8 bg-white shadow-md">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-3xl font-extrabold mb-2">Registered Teams</h1>
+      <p class="text-lg text-gray-600 mb-4">
+        Home Court Series - August 8, 2025
+      </p>
+      <a href="index.html" class="text-blue-600 hover:underline">← Back to Tournament Info</a>
+    </div>
+  </section>
+
+  <!-- Registered Teams -->
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    
+    <!-- Teams List -->
+    <div class="bg-white rounded-lg shadow-md p-8">
+      <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Registered Teams</h2>
+      
+      <div class="space-y-4">
+        <!-- Team 1 -->
+        <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+          <div class="flex-1">
+            <div class="font-semibold text-lg text-gray-800">Blake S / Wayne Y</div>
+            <div class="text-sm text-gray-600">Representing: NRH Court</div>
+          </div>
+          <div class="text-right">
+            <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded-full">NRH</span>
+          </div>
+        </div>
+
+        <!-- Team 2 -->
+        <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+          <div class="flex-1">
+            <div class="font-semibold text-lg text-gray-800">William M / Jesus V</div>
+            <div class="text-sm text-gray-600">Representing: Beach Bakyard</div>
+          </div>
+          <div class="text-right">
+            <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded-full">BAKYARD</span>
+          </div>
+        </div>
+
+        <!-- Team 3 -->
+        <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+          <div class="flex-1">
+            <div class="font-semibold text-lg text-gray-800">Dayton A / Daniel L</div>
+            <div class="text-sm text-gray-600">Representing: Beach Bakyard</div>
+          </div>
+          <div class="text-right">
+            <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded-full">BAKYARD</span>
+          </div>
+        </div>
+
+        <!-- Team 4 -->
+        <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+          <div class="flex-1">
+            <div class="font-semibold text-lg text-gray-800">Caleb M / Yahya J</div>
+            <div class="text-sm text-gray-600">Representing: NRH Court</div>
+          </div>
+          <div class="text-right">
+            <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded-full">NRH</span>
+          </div>
+        </div>
+
+        <!-- Team 5 -->
+        <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+          <div class="flex-1">
+            <div class="font-semibold text-lg text-gray-800">Marcus D / Ross K</div>
+            <div class="text-sm text-gray-600">Representing: Sandy Pickle</div>
+          </div>
+          <div class="text-right">
+            <span class="inline-block bg-orange-100 text-orange-800 text-xs font-semibold px-2 py-1 rounded-full">PICKLE</span>
+          </div>
+        </div>
+
+        <!-- Team 6 -->
+        <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+          <div class="flex-1">
+            <div class="font-semibold text-lg text-gray-800">Daniel G / Rolando</div>
+            <div class="text-sm text-gray-600">Representing: The Strand</div>
+          </div>
+          <div class="text-right">
+            <span class="inline-block bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded-full">STRAND</span>
+          </div>
+        </div>
+
+      
+      <!-- Summary -->
+      <div class="mt-8 pt-6 border-t border-gray-200 text-center">
+        <p class="text-lg font-semibold text-gray-800 mb-2">6 Teams Registered</p>
+        <p class="text-sm text-gray-600">Registration is ongoing. Teams appear after payment is received.</p>
+      </div>
+
+      <!-- Random Order Generator -->
+      <div class="text-center mt-6 pt-6 border-t border-gray-200">
+        <button id="randomizeBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition-colors duration-200">
+          🎲 Generate Random Order
+        </button>
+        <p class="text-sm text-gray-600 mt-2">Click to randomize team order for tournament setup</p>
+      </div>
+    </div>
+
+    <!-- Scoresheet Options -->
+    <div class="bg-gray-100 rounded-lg p-6 mt-8">
+      <h2 class="text-xl font-bold mb-4 text-center text-gray-800">Tournament Scoresheets</h2>
+      <p class="text-sm text-gray-600 text-center mb-6">Choose the scoresheet format that works best for your tournament</p>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+        <a href="scoresheet-master.html" class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition block text-center">
+          <div class="text-2xl mb-2">📊</div>
+          <h3 class="font-semibold text-gray-800 mb-2">Master Scoresheet</h3>
+          <p class="text-xs text-gray-600">Single page with all teams and rounds - overview format</p>
+        </a>
+        
+        <a href="scoresheet-rounds.html" class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition block text-center">
+          <div class="text-2xl mb-2">📋</div>
+          <h3 class="font-semibold text-gray-800 mb-2">Round Sheets</h3>
+          <p class="text-xs text-gray-600">Individual sheets for each round - detailed scoring</p>
+        </a>
+        
+        <a href="scoresheet-courts.html" class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition block text-center">
+          <div class="text-2xl mb-2">🏐</div>
+          <h3 class="font-semibold text-gray-800 mb-2">Court Sheets</h3>
+          <p class="text-xs text-gray-600">Separate sheets for Court A and B - dual court tournaments</p>
+        </a>
+        
+        <a href="scoresheet-teams.html" class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition block text-center">
+          <div class="text-2xl mb-2">👥</div>
+          <h3 class="font-semibold text-gray-800 mb-2">Team Trackers</h3>
+          <p class="text-xs text-gray-600">Individual sheets per team - personal scorecards</p>
+        </a>
+        
+        <a href="https://docs.google.com/spreadsheets/d/1gs98aFD9bm9jn5QhXOaVuveP0nz5fnj1H41dsKvFAYU/edit?usp=sharing" target="_blank" class="bg-green-50 rounded-lg p-4 shadow-md hover:shadow-lg transition block text-center border-2 border-green-200">
+          <div class="text-2xl mb-2">📈</div>
+          <h3 class="font-semibold text-gray-800 mb-2">Google Sheets</h3>
+          <p class="text-xs text-gray-600">Live digital scoresheet with auto-calculations</p>
+        </a>
+      </div>
+      
+      <div class="text-center mt-4">
+        <p class="text-xs text-gray-500">All scoresheets are printer-friendly and designed for easy tournament management</p>
+      </div>
+    </div>
+
+
+  </main>
+
+  <script>
+    document.getElementById('randomizeBtn').addEventListener('click', function() {
+      // Get all team containers
+      const teamsContainer = document.querySelector('.space-y-4');
+      const teamDivs = Array.from(teamsContainer.children);
+      
+      // Extract team data
+      const teams = teamDivs.map(div => {
+        const nameElement = div.querySelector('.font-semibold');
+        const representingElement = div.querySelector('.text-sm.text-gray-600');
+        const tagElement = div.querySelector('.inline-block');
+        
+        return {
+          name: nameElement.textContent,
+          representing: representingElement.textContent,
+          tag: tagElement.textContent,
+          tagClasses: tagElement.className
+        };
+      });
+      
+      // Shuffle the teams array using Fisher-Yates algorithm
+      for (let i = teams.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [teams[i], teams[j]] = [teams[j], teams[i]];
+      }
+      
+      // Update the DOM with randomized order
+      teams.forEach((team, index) => {
+        const teamDiv = teamDivs[index];
+        const nameElement = teamDiv.querySelector('.font-semibold');
+        const representingElement = teamDiv.querySelector('.text-sm.text-gray-600');
+        const tagElement = teamDiv.querySelector('.inline-block');
+        
+        nameElement.textContent = team.name;
+        representingElement.textContent = team.representing;
+        tagElement.textContent = team.tag;
+        tagElement.className = team.tagClasses;
+        
+        // Add or update team number
+        let numberElement = teamDiv.querySelector('.team-number');
+        if (!numberElement) {
+          numberElement = document.createElement('div');
+          numberElement.className = 'team-number flex-shrink-0 w-8 h-8 bg-gray-800 text-white rounded-full flex items-center justify-center font-bold text-sm mr-4';
+          teamDiv.insertBefore(numberElement, teamDiv.firstChild);
+        }
+        numberElement.textContent = index + 1;
+      });
+      
+      // Show confirmation message
+      const button = document.getElementById('randomizeBtn');
+      const originalText = button.innerHTML;
+      button.innerHTML = '✅ Teams Randomized!';
+      button.disabled = true;
+      
+      setTimeout(() => {
+        button.innerHTML = originalText;
+        button.disabled = false;
+      }, 2000);
+    });
+  </script>
+
+</body>
+</html>
