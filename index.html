@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mens Open Home Court Series</title>
+  <title>Men's Open Home Court Series</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Analytics 4 (GA4) Tracking Code -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RWHND3S75"></script>
@@ -19,11 +19,11 @@
   <!-- Hero -->
   <section class="py-12 bg-white shadow-md">
     <div class="max-w-5xl mx-auto px-4 text-center">
-      <h1 class="text-4xl font-extrabold mb-2">Mens Open Home Court Series</h1>
+      <h1 class="text-4xl font-extrabold mb-2">Home Court Series</h1>
       <p class="text-lg text-gray-600 mb-8">
         Wondering where the best players in DFW Play? Find out in in these FIVB-Style King of the Court Tournaments. <br>
         <strong>
-          This format is designed for maximum competition and the most efficient use of time possible. <br> Friday nights in August starting 8/1/25. Check-in 6pm, first serve 6:30pm.
+          This format is designed for maximum competition and the most efficient use of time possible. <br> Friday nights in August starting 8/1/25 (<a href="results.html" class="text-blue-600 hover:underline">8/1</a>, <a href="results.html" class="text-blue-600 hover:underline">8/8</a>, <a href="index.html?date=2025-08-15#register" class="text-blue-600 hover:underline">8/15</a>, <a href="index.html?date=2025-08-22#register" class="text-blue-600 hover:underline">8/22</a>, <a href="index.html?date=2025-08-29#register" class="text-blue-600 hover:underline">8/29</a>). Check-in 6pm, first serve 6:30pm.
         </strong>
       </p>
       
@@ -51,9 +51,9 @@
           </video>
         </div>
         
-        <!-- August Evening Play Section -->
+        <!-- Friday Night Lights Section -->
         <div class="bg-orange-100 rounded-lg p-6 max-w-md w-full">
-          <h2 class="text-xl font-bold mb-4 text-center text-orange-800">🌅 August Evening Play</h2>
+          <h2 class="text-xl font-bold mb-4 text-center text-orange-800"><img src="optx.webp" alt="Beach Volleyball" class="w-6 h-6 inline-block mr-2" />Friday Night Lights</h2>
           <div class="text-center">
             <div class="text-4xl mb-3">🌡️</div>
             <p class="text-orange-800 font-semibold mb-2">Beat the Texas Heat!</p>
@@ -76,23 +76,27 @@
           </a>
         </div>
 
-        <!-- Tournament Results Link -->
-        <div class="bg-green-50 rounded-lg p-4 max-w-md w-full mt-4 text-center">
-          <h2 class="text-lg font-bold mb-2 text-green-800">Tournament Results</h2>
-          <a href="results.html" target="_blank" class="inline-block bg-green-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-700 transition">
-            View Results
-          </a>
-          <p class="text-xs text-green-600 mt-2">Updated weekly with latest tournament results!</p>
+        <!-- Tournament Results and Payouts Section -->
+        <div class="max-w-md w-full mt-4">
+          <!-- Tournament Results Link -->
+          <div class="bg-green-50 rounded-lg p-4 text-center">
+            <h2 class="text-lg font-bold mb-2 text-green-800">Tournament Results</h2>
+            <a href="results.html" target="_blank" class="inline-block bg-green-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-700 transition">
+              View Results
+            </a>
+            <p class="text-xs text-green-600 mt-2">Updated weekly with latest tournament results!</p>
+          </div>
+
+          <!-- Tournament Payouts Link -->
+          <div class="bg-yellow-50 rounded-lg p-4 text-center mt-4">
+            <h2 class="text-lg font-bold mb-2 text-yellow-800">💰 Tournament Payouts</h2>
+            <a href="payouts.html" target="_blank" class="inline-block bg-yellow-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-yellow-700 transition">
+              View Payouts
+            </a>
+            <p class="text-xs text-yellow-600 mt-2">See prize money for each tournament size!</p>
+          </div>
         </div>
 
-        <!-- Tournament Payouts Link -->
-        <div class="bg-yellow-50 rounded-lg p-4 max-w-md w-full mt-4 text-center">
-          <h2 class="text-lg font-bold mb-2 text-yellow-800">💰 Tournament Payouts</h2>
-          <a href="payouts.html" target="_blank" class="inline-block bg-yellow-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-yellow-700 transition">
-            View Payouts
-          </a>
-          <p class="text-xs text-yellow-600 mt-2">See prize money for each tournament size!</p>
-        </div>
       </div>
       
       <script>
@@ -325,7 +329,7 @@
           <option value="MadSand Volleyball">MadSand Volleyball</option>
           <option value="NRH Private Court">NRH Private Court</option>
           <option value="Sachse Private Court">Sachse Private Court</option>
-          <option value="Sandy Pickle">Sandy Pickle</option>
+          <option value="Spicy Pickle">Spicy Pickle</option>
           <option value="Sports Garden DFW">Sports Garden DFW</option>
           <option value="TCU Beach Volleyball">TCU Beach Volleyball</option>
           <option value="The Strand">The Strand</option>
@@ -380,6 +384,30 @@
       }
     </script>
   </section>
+
+  <script>
+    // Auto-select date from URL parameter
+    document.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const selectedDate = urlParams.get('date');
+      
+      if (selectedDate) {
+        const eventDateSelect = document.getElementById('eventdate');
+        
+        // Map the date parameter to the option values
+        const dateMapping = {
+          '2025-08-15': 'August 15, 2025',
+          '2025-08-22': 'August 22, 2025',
+          '2025-08-29': 'August 29, 2025'
+        };
+        
+        const optionValue = dateMapping[selectedDate];
+        if (optionValue) {
+          eventDateSelect.value = optionValue;
+        }
+      }
+    });
+  </script>
 
 </body>
 </html>
