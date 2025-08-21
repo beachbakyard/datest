@@ -174,21 +174,35 @@
 
   <script>
     document.getElementById('randomizeBtn').addEventListener('click', function() {
-      // Get all team containers
-      const teamsContainer = document.querySelector('.space-y-4');
-      const teamDivs = Array.from(teamsContainer.children);
+      console.log('Button clicked!'); // Debug log
+      // Get only the actual team divs (not summary or other sections)
+      const teamDivs = Array.from(document.querySelectorAll('.space-y-3 > div.flex.flex-col'));
+      console.log('Found team divs:', teamDivs.length); // Debug log
+      
+      if (teamDivs.length === 0) {
+        alert('No teams found to randomize!');
+        return;
+      }
+      
+      // Remove any existing team numbers first
+      teamDivs.forEach(div => {
+        const existingNumber = div.querySelector('.team-number');
+        if (existingNumber) {
+          existingNumber.remove();
+        }
+      });
       
       // Extract team data
       const teams = teamDivs.map(div => {
         const nameElement = div.querySelector('.font-semibold');
-        const representingElement = div.querySelector('.text-sm.text-gray-600');
+        const representingElement = div.querySelector('.text-gray-600');
         const tagElement = div.querySelector('.inline-block');
         
         return {
-          name: nameElement.textContent,
-          representing: representingElement.textContent,
-          tag: tagElement.textContent,
-          tagClasses: tagElement.className
+          name: nameElement?.textContent || 'Unknown',
+          representing: representingElement?.textContent || 'Unknown',
+          tag: tagElement?.textContent || 'Unknown',
+          tagClasses: tagElement?.className || ''
         };
       });
       
@@ -202,13 +216,15 @@
       teams.forEach((team, index) => {
         const teamDiv = teamDivs[index];
         const nameElement = teamDiv.querySelector('.font-semibold');
-        const representingElement = teamDiv.querySelector('.text-sm.text-gray-600');
+        const representingElement = teamDiv.querySelector('.text-gray-600');
         const tagElement = teamDiv.querySelector('.inline-block');
         
-        nameElement.textContent = team.name;
-        representingElement.textContent = team.representing;
-        tagElement.textContent = team.tag;
-        tagElement.className = team.tagClasses;
+        if (nameElement) nameElement.textContent = team.name;
+        if (representingElement) representingElement.textContent = team.representing;
+        if (tagElement) {
+          tagElement.textContent = team.tag;
+          tagElement.className = team.tagClasses;
+        }
         
         // Add or update team number
         let numberElement = teamDiv.querySelector('.team-number');
